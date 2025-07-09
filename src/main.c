@@ -3,7 +3,10 @@
 
 int main(int args, char* argv[]){
 
-	lexer_T* lexer = init_lexer("var name = \" root \"; \n ");
+	lexer_T* lexer = init_lexer(
+		"let name = \" root \"; \n "
+		"print(name);"
+		);
 
 
 	token_T* token = (void*)0;
