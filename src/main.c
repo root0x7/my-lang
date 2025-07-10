@@ -1,20 +1,22 @@
 #include <stdio.h>
 #include "include/lexer.h"
+#include "include/parser.h"
 
-int main(int args, char* argv[]){
 
+int main(int argc, char* argv[])
+{
 	lexer_T* lexer = init_lexer(
-		"let name = \" root \"; \n "
-		"print(name);"
+		"var name = \"john doe\";\n"
+		"print(name);\n"
 		);
 
+	parser_T* parser = init_parser(lexer);
+	AST_T* root = parser_parse(parser);
 
-	token_T* token = (void*)0;
+	printf("%zu\n", root->compound_size);
 
-	while((token = lexer_get_next_token(lexer)) != (void*)0){
-		printf("TOKEN(%d,%s) \n", token->type,token->value);
-	}
+	printf("%zu\n", root->compound_size);
 
-
+	
 	return 0;
 }
