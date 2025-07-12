@@ -73,7 +73,9 @@ AST_T* parser_parse_expr(parser_T* parser)
     switch (parser->current_token->type)
     {
     case TOKEN_STRING: return parser_parse_string(parser);
+    case TOKEN_ID: return parser_parse_id(parser);
     }
+    printf("%d\n",parser->current_token->type);
 }
 
 AST_T* parser_parse_factor(parser_T* parser)
@@ -87,6 +89,8 @@ AST_T* parser_parse_term(parser_T* parser)
 AST_T* parser_parse_function_call(parser_T* parser)
 {
     AST_T* function_call =init_ast(AST_FUNCTION_CALL);
+    parser_eat(parser,TOKEN_LPAREN);
+
     function_call->function_call_name = parser->prev_token->value;
 
     function_call->function_call_arguments = calloc(1,sizeof(struct AST_STRUCT));
@@ -106,6 +110,10 @@ AST_T* parser_parse_function_call(parser_T* parser)
             );
         function_call->function_call_arguments[function_call->function_call_arguments_size-1] = ast_expr;
     }
+
+    parser_eat(parser,TOKEN_RPAREN);
+
+
     return function_call;
 }
 
