@@ -1,3 +1,6 @@
-var name = "john doe";
-var othername = "sarah";
-print(name, othername);
+function tailand()
+{
+    print("aziz");
+};
+
+tailand();

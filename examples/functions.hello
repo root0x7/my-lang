@@ -1,0 +1,6 @@
+function dosomething()
+{
+    print("This is our function calling!");
+};
+
+dosomething();
