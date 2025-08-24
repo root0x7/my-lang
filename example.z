@@ -1,6 +1,6 @@
 function tailand()
 {
     print("aziz");
-};
+}
 
 tailand();
