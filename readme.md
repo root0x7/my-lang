@@ -62,12 +62,12 @@ Natija:
 	10
 
 📂 Loyiha tuzilmasi
-	my-lang/
-	├── src/            # Manba kodi
-	├── examples/       # Namunaviy skriptlar
-	├── Makefile        # Tuzish uchun
-	├── example.z       # Oddiy skript namunasi
-	└── lang.out        # Chiqarilgan natijalar
+my-lang/
+├── src/            # Manba kodi
+├── examples/       # Namunaviy skriptlar
+├── Makefile        # Tuzish uchun
+├── example.z       # Oddiy skript namunasi
+└── lang.out        # Chiqarilgan natijalar
 
 🤝 Hissa qo‘shish
 
